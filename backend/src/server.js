@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 import contextRoute from "./routes/context.route.js";
+import generateRoute from "./routes/generate.route.js";
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ app.get("/", (_, res) => {
 });
 
 app.use("/api/context", contextRoute);
+app.use("/api/generate", generateRoute);
 
 const PORT = process.env.PORT || 5000;
 
